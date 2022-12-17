@@ -48,6 +48,7 @@ public class ProductPage extends BasePage{
            if (db == priceDouble) {
                sum+=db;
                clickProduct(priceDbl.indexOf(db)+1);
+               BrowserUtils.waitFor(2);
            }
        }
    }
