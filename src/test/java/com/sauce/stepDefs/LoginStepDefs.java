@@ -23,8 +23,12 @@ public class LoginStepDefs {
         loginPages.login_mtd(username, password);
     }
 
-    @Then("The user should be able to login and {string} see page")
-    public void the_user_should_be_able_to_login_and_see_page(String expectedHeader) {
-        Assert.assertEquals("Title should be displayed",expectedHeader,productPage.productHeader_loc.getText());
+    @Then("The user should be able to verify being on the page by using page title {string}")
+    public void the_user_should_be_able_to_verify_being_on_the_page_by_using_page_title(String pageTitle) {
+        Assert.assertEquals(pageTitle.toUpperCase(),loginPages.PageTitle(pageTitle));
     }
+//    @Then("The user should be able to login and {string} see page")
+//    public void the_user_should_be_able_to_login_and_see_page(String expectedHeader) {
+//        Assert.assertEquals("Title should be displayed",expectedHeader,productPage.productHeader_loc.getText());
+//    }
 }
