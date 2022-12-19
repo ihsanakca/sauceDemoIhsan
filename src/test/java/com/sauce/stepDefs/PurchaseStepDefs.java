@@ -17,13 +17,19 @@ public class PurchaseStepDefs {
         productPage.sortProduct(sortBy);
     }
 
-    @And("The user should be able to select the product by using {string}")
-    public void theUserShouldBeAbleToSelectTheProductByUsing(String price) {
+    @And("The user should be able to select the product by using price: {string}")
+    public void theUserShouldBeAbleToSelectTheProductByUsingPrice(String price) {
         productPage.selectProductwithPrice(price);
     }
 
     @And("The user should be able to go to your cart page")
     public void theUserShouldBeAbleToGoToYourCartPage() {
         productPage.goToCart();
+    }
+
+    @And("The user should be able to select the product by using index No: {string}")
+    public void theUserShouldBeAbleToSelectTheProductByUsingIndexNo(String indexNo) {
+        productPage.selectProductWithIndexNumber(Integer.parseInt(indexNo)-1);
+        BrowserUtils.waitFor(3);
     }
 }

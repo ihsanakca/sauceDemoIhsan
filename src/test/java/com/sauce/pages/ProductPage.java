@@ -22,9 +22,10 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//div[@class='inventory_item_price']")
     public List<WebElement> productPrices_loc;
 
-    @FindBy(xpath = "(//button[starts-with(@class,'btn')])[1]")
-    public List<WebElement> buttons_loc;
+    @FindBy(xpath = "//button[starts-with(@class,'btn')]")
+    public List<WebElement> productAddToCartButtons_loc;
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
+
     public WebElement goToCartButton_loc;
     public static Double sum = 0.0;
     public void sortProduct(String sortingText) {
@@ -47,5 +48,9 @@ public class ProductPage extends BasePage {
     }
     public void goToCart() {
         goToCartButton_loc.click();
+    }
+
+    public void selectProductWithIndexNumber(int a){
+       productAddToCartButtons_loc.get(a).click();
     }
 }
