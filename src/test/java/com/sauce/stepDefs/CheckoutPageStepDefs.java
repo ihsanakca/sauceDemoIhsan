@@ -12,7 +12,6 @@ public class CheckoutPageStepDefs {
     public void the_user_should_be_able_to_fill_the_form_by_using_and(String name, String lastname, String postalCode) {
     checkoutPage.fillCheckoutForm(name,lastname,postalCode);
     }
-
     @And("The user should be able to click continue and navigate to checkout overview page")
     public void theUserShouldBeAbleToClickContinueAndNavigateToCheckoutOverviewPage() {
         checkoutPage.clickContinue();

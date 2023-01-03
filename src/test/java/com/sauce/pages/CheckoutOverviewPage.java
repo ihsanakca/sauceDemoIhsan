@@ -1,5 +1,6 @@
 package com.sauce.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,5 +16,12 @@ public class CheckoutOverviewPage extends BasePage{
     }
     public void clickFinishButton(){
         finishBtn_loc.click();
+    }
+
+    public void assertPurchaseWithItemTotal(){
+        Assert.assertEquals(ProductPage.sum,getItemTotal());
+        System.out.println("checkoutOverviewPage.getItemTotal() = " + getItemTotal());
+        System.out.println("ProductPage.sum = " + ProductPage.sum);
+        System.out.println("ProductPage.numberOfProduct = " + ProductPage.numberOfProduct);
     }
 }

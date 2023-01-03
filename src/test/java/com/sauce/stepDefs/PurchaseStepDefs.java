@@ -25,11 +25,12 @@ public class PurchaseStepDefs {
     @And("The user should be able to go to your cart page")
     public void theUserShouldBeAbleToGoToYourCartPage() {
         productPage.goToCart();
+        BrowserUtils.waitFor(2);
     }
 
     @And("The user should be able to select the product by using index No: {string}")
     public void theUserShouldBeAbleToSelectTheProductByUsingIndexNo(String indexNo) {
-        productPage.selectProductWithIndexNumber(Integer.parseInt(indexNo)-1);
+        productPage.selectProductWithIndexNumber(indexNo);
         BrowserUtils.waitFor(3);
     }
 }

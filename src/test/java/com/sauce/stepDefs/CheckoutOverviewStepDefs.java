@@ -11,9 +11,7 @@ public class CheckoutOverviewStepDefs {
 
     @When("The user should be able to verify bill with Item Total")
     public void the_user_should_be_able_to_verify_bill_with_item_total() {
-        Assert.assertEquals(ProductPage.sum,checkoutOverviewPage.getItemTotal());
-        System.out.println("checkoutOverviewPage.getItemTotal() = " + checkoutOverviewPage.getItemTotal());
-        System.out.println("ProductPage.sum = " + ProductPage.sum);
+       checkoutOverviewPage.assertPurchaseWithItemTotal();
     }
 
     @And("The user should be able to click finish button and navigate to last page")

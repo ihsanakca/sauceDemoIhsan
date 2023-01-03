@@ -2,6 +2,7 @@ package com.sauce.stepDefs;
 
 import com.sauce.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
@@ -23,6 +24,10 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png","screenshot");
         }
+
+    }
+    @AfterAll
+    public static void tearDown(){
         Driver.closeDriver();
     }
 }

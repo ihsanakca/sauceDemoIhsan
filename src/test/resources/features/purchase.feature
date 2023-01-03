@@ -4,11 +4,13 @@ Feature: Purchase E2E Test
     Given The user is on the login page
     When The user enters "standard_user" and "secret_sauce"
 
-  @wip
-  Scenario: Sauce PurchaseWhen
+@wip2
+  Scenario: Sauce Purchase
     When The user should be able to sort the product "Price (high to low)"
-    And The user should be able to select the product by using price: "7.99"
+  #  And The user should be able to select the product by using price: "cheapest"
     And The user should be able to select the product by using price: "29.99"
+    And The user should be able to select the product by using price: "49.99"
+    And The user should be able to select the product by using price: "7.99"
     #And The user should be able to select the product by using index No: "1"
     #And The user should be able to select the product by using index No: "6"
     And The user should be able to go to your cart page
